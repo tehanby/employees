@@ -19,7 +19,9 @@
     [dateFormatter setDateFormat:@"MM-dd-yyyy"];
     
     NSArray *name = [[NSArray alloc] initWithObjects:self.firstName, self.middleName, self.lastName, nil];
-    NSArray *string = [[NSArray alloc] initWithObjects:[@"Id: " stringByAppendingFormat: @"%d", [self.userId integerValue]],
+    NSArray *string = [[NSArray alloc] initWithObjects:
+                       [super description],
+                       [@"Id: " stringByAppendingFormat: @"%d", [self.userId integerValue]],
                        [@"Name: " stringByAppendingFormat: @"%@", [name componentsJoinedByString:@" "]],
                        [@"Email: " stringByAppendingFormat: @"%@", self.email],
                        [@"Birthdate: " stringByAppendingFormat: @"%@", [dateFormatter stringFromDate:self.birthDate]],
@@ -31,4 +33,16 @@
 
 }
 
+- (BOOL)isEqual:(employee *)employee{
+    BOOL equal = NO;
+    if(self.hash == employee.hash){
+        equal = YES;
+    }
+    return equal;
+}
+
+- (NSUInteger)hash
+{
+    return (NSUInteger)self;
+}
 @end

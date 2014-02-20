@@ -7,12 +7,45 @@
 //
 
 #import "AppDelegate.h"
+#import "employee.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"MM-dd-yyyy";
+    
+    NSString *firstName = @"Timothy";
+    NSString *middleName = @"Edward";
+    NSString *lastName = @"Hanby";
+    NSString *email = @"teh@trifecta.com";
+    NSString *birthDateAsString = @"05/23/1987";
+    
+    employee *employee1 = [[employee alloc] init];
+    employee1.firstName = [NSString stringWithString:firstName];
+    employee1.lastName = [NSString stringWithString:lastName];
+    employee1.middleName = [NSString stringWithString:middleName];
+    employee1.email = [NSString stringWithString:email];
+    employee1.userId = [NSNumber numberWithInt:1];
+    employee1.salary = [NSNumber numberWithInt:10000];
+    employee1.birthDate = [dateFormatter dateFromString:birthDateAsString];
+    
+    employee *employee2 = [[employee alloc] init];
+    employee2.firstName = [NSString stringWithString:firstName];
+    employee2.lastName = [NSString stringWithString:lastName];
+    employee2.middleName = [NSString stringWithString:middleName];
+    employee2.email = [NSString stringWithString:email];
+    employee2.userId = [NSNumber numberWithInt:1];
+    employee2.salary = [NSNumber numberWithInt:10000];
+    employee2.birthDate = [dateFormatter dateFromString:birthDateAsString];
+    
+    BOOL equals = [employee1 isEqual:employee2];
+    NSLog(@"is Employee1 equal to Employee 2? %@", (equals) ? @"Yes" : @"No");
+    NSLog(@"Employee 1 hash = %tx", [employee1 hash]);
+    NSLog(@"Employee 2 hash = %tx", [employee2 hash]);
+    
     return YES;
 }
 							
