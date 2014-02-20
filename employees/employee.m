@@ -34,11 +34,16 @@
 }
 
 - (BOOL)isEqual:(employee *)employee{
-    BOOL equal = NO;
-    if(self.hash == employee.hash){
-        equal = YES;
-    }
-    return equal;
+    if(![employee isKindOfClass:[employee class]]) return NO;
+    
+    BOOL userIdIsEqual = self.userId == employee.userId;
+    BOOL firstNameIsEqual = [self.firstName isEqualToString:employee.firstName];
+    BOOL middleNameIsEqual = [self.middleName isEqualToString:employee.middleName];
+    BOOL lastNameIsEqual = [self.lastName isEqualToString:employee.lastName];
+    BOOL emailIsEqual = [self.email isEqualToString:employee.email];
+    BOOL salaryIsEqual = self.salary == employee.salary;
+    BOOL birthDateIsEqual = [self.birthDate isEqualToDate: employee.birthDate];
+    return userIdIsEqual && firstNameIsEqual && middleNameIsEqual && lastNameIsEqual && emailIsEqual && salaryIsEqual && birthDateIsEqual;
 }
 
 - (NSUInteger)hash
