@@ -78,8 +78,10 @@
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
-    self = [super initWithCoder:decoder];
-    
+    self = [super init];
+    if (self) {
+        <#initializations#>
+    }
     return self;
 }
 
