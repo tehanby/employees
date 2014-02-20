@@ -18,4 +18,13 @@
 @property (strong, nonatomic) NSNumber *salary;
 @property (strong, nonatomic) NSDate *birthDate;
 
+- (instancetype)initUserId:(NSNumber*)userId
+                 firstName:(NSString*)firstName
+                middleName:(NSString*)middleName
+                  lastName:(NSString*)lastName
+                     email:(NSString*)email
+                    salary:(NSNumber*)salary
+                 birthDate:(NSDate*)birthDate;
+
+
 @end
