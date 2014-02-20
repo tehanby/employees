@@ -32,6 +32,32 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super init];
+    if (self) {
+        _userId = [decoder decodeObjectForKey:@"userId"];
+        _firstName = [decoder decodeObjectForKey:@"firstName"];
+        _middleName = [decoder decodeObjectForKey:@"middleName"];
+        _lastName = [decoder decodeObjectForKey:@"lastName"];
+        _email = [decoder decodeObjectForKey:@"email"];
+        _salary = [decoder decodeObjectForKey:@"salary"];
+        _birthDate = [decoder decodeObjectForKey:@"birthDate"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.userId forKey:@"userId"];
+    [encoder encodeObject:self.firstName forKey:@"firstName"];
+    [encoder encodeObject:self.middleName forKey:@"middleName"];
+    [encoder encodeObject:self.lastName forKey:@"lastName"];
+    [encoder encodeObject:self.email forKey:@"email"];
+    [encoder encodeObject:self.salary forKey:@"salary"];
+    [encoder encodeObject:self.birthDate forKey:@"birthDate"];
+}
+
 - (NSString *)description
 {
     NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
@@ -73,22 +99,7 @@
 
 - (NSUInteger)hash
 {
-    return (NSUInteger)self;
+    return (NSUInteger)self.userId.hash ^ self.firstName.hash ^ self.middleName.hash ^ self.lastName.hash ^ self.email.hash ^ self.salary.hash ^ self.birthDate.hash;
 }
-
-- (id)initWithCoder:(NSCoder *)decoder
-{
-    self = [super init];
-    if (self) {
-        <#initializations#>
-    }
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)encoder
-{
-    
-}
-
 
 @end
