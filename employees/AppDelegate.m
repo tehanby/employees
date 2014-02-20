@@ -42,11 +42,26 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    // Make sure the file exists and is setup for encryption.
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"MM/dd/yyyy";
+    
+    NSString *birthDateAsString = @"05/23/1987";
+    
+    employee *employeeTest = [[employee alloc] initUserId:[NSNumber numberWithInt:1] firstName:@"Timothy" middleName:@"Edward" lastName:@"Hanby" email:@"teh@trifecta.com" salary:[NSNumber numberWithInt:10000] birthDate:[dateFormatter dateFromString:birthDateAsString]];
+    
+    NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    self.filePath = [NSString stringWithFormat:@"%@/persistentQueue.nscoded",docDir];
+    
+    [NSKeyedArchiver archiveRootObject:employeeTest toFile:self.filePath];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    employee *employeeTest = [NSKeyedUnarchiver unarchiveObjectWithFile:self.filePath];
+    NSLog([employeeTest description]);
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
