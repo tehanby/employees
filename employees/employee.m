@@ -18,7 +18,7 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM-dd-yyyy"];
     
-    NSArray *name = [[NSArray alloc] initWithObjects:employee.firstName, employee.middleName, employee.lastName, nil];
+    NSArray *name = [[NSArray alloc] initWithObjects:self.firstName, self.middleName, self.lastName, nil];
     NSArray *string = [[NSArray alloc] initWithObjects:[@"Id: " stringByAppendingFormat: @"%d", [self.userId integerValue]],
                        [@"Name: " stringByAppendingFormat: @"%@", [name componentsJoinedByString:@" "]],
                        [@"Email: " stringByAppendingFormat: @"%@", self.email],
