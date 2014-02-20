@@ -38,7 +38,7 @@
     [currencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM-dd-yyyy"];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
     
     NSArray *name = [[NSArray alloc] initWithObjects:self.firstName, self.middleName, self.lastName, nil];
     NSArray *string = [[NSArray alloc] initWithObjects:
@@ -61,21 +61,13 @@
     
     if(![employee isKindOfClass:[employee class]]) return NO;
     
-    BOOL userIdIsEqual = self.userId == employee.userId;
+    BOOL userIdIsEqual = [self.userId isEqual:employee.userId];
     BOOL firstNameIsEqual = [self.firstName isEqualToString:employee.firstName];
     BOOL middleNameIsEqual = [self.middleName isEqualToString:employee.middleName];
     BOOL lastNameIsEqual = [self.lastName isEqualToString:employee.lastName];
     BOOL emailIsEqual = [self.email isEqualToString:employee.email];
-    BOOL salaryIsEqual = self.salary == employee.salary;
+    BOOL salaryIsEqual = [self.salary isEqual:employee.salary];
     BOOL birthDateIsEqual = [self.birthDate isEqualToDate: employee.birthDate];
-    NSLog(@"Employee userId = %@", (userIdIsEqual) ? @"Yes" : @"No");
-    NSLog(@"Employee firstName = %@", (firstNameIsEqual) ? @"Yes" : @"No");
-    NSLog(@"Employee middleName = %@", (middleNameIsEqual) ? @"Yes" : @"No");
-    NSLog(@"Employee lastName = %@", (lastNameIsEqual) ? @"Yes" : @"No");
-    NSLog(@"Employee email = %@", (emailIsEqual) ? @"Yes" : @"No");
-    NSLog(@"Employee salary = %@ self = %d employee = %d", (salaryIsEqual) ? @"Yes" : @"No", [self.salary integerValue], [employee.salary integerValue]);
-    NSLog(@"Employee birthDate = %@ self = %@ employee = %@", (birthDateIsEqual) ? @"Yes" : @"No", [dateFormatter stringFromDate:self.birthDate],
-                                                                                                    [dateFormatter stringFromDate:employee.birthDate]);
     return userIdIsEqual && firstNameIsEqual && middleNameIsEqual && lastNameIsEqual && emailIsEqual && salaryIsEqual && birthDateIsEqual;
 }
 

@@ -15,7 +15,7 @@
 {
     // Override point for customization after application launch.
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"MM-dd-yyyy";
+    dateFormatter.dateFormat = @"MM/dd/yyyy";
     
     NSString *birthDateAsString = @"05/23/1987";
     
