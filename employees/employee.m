@@ -75,4 +75,18 @@
 {
     return (NSUInteger)self;
 }
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super initWithCoder:decoder];
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    
+}
+
+
 @end
