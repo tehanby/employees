@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E4E36BC18B65041004EF4C3 /* employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4E36BB18B65041004EF4C3 /* employee.m */; };
 		8E684B8718B64ACB00271D62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E684B8618B64ACB00271D62 /* Foundation.framework */; };
 		8E684B8918B64ACB00271D62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E684B8818B64ACB00271D62 /* CoreGraphics.framework */; };
 		8E684B8B18B64ACB00271D62 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E684B8A18B64ACB00271D62 /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E4E36BA18B65041004EF4C3 /* employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = employee.h; sourceTree = "<group>"; };
+		8E4E36BB18B65041004EF4C3 /* employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = employee.m; sourceTree = "<group>"; };
 		8E684B8318B64ACB00271D62 /* employees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = employees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E684B8618B64ACB00271D62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8E684B8818B64ACB00271D62 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E4E36B918B65021004EF4C3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8E4E36BA18B65041004EF4C3 /* employee.h */,
+				8E4E36BB18B65041004EF4C3 /* employee.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		8E684B7A18B64ACB00271D62 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +133,7 @@
 				8E684B9E18B64ACB00271D62 /* ViewController.h */,
 				8E684B9F18B64ACB00271D62 /* ViewController.m */,
 				8E684BA118B64ACB00271D62 /* Images.xcassets */,
+				8E4E36B918B65021004EF4C3 /* model */,
 				8E684B8D18B64ACB00271D62 /* Supporting Files */,
 			);
 			path = employees;
@@ -202,6 +215,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Timothy Hanby";
 				TargetAttributes = {
+					8E684B8218B64ACB00271D62 = {
+						DevelopmentTeam = 478S752A6K;
+					};
 					8E684BA618B64ACB00271D62 = {
 						TestTargetID = 8E684B8218B64ACB00271D62;
 					};
@@ -254,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E684BA018B64ACB00271D62 /* ViewController.m in Sources */,
+				8E4E36BC18B65041004EF4C3 /* employee.m in Sources */,
 				8E684B9718B64ACB00271D62 /* AppDelegate.m in Sources */,
 				8E684B9318B64ACB00271D62 /* main.m in Sources */,
 			);
@@ -392,6 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "employees/employees-Prefix.pch";
 				INFOPLIST_FILE = "employees/employees-Info.plist";
@@ -405,6 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "employees/employees-Prefix.pch";
 				INFOPLIST_FILE = "employees/employees-Info.plist";
@@ -474,6 +493,7 @@
 				8E684BBA18B64ACB00271D62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E684BBB18B64ACB00271D62 /* Build configuration list for PBXNativeTarget "employeesTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +502,7 @@
 				8E684BBD18B64ACB00271D62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
