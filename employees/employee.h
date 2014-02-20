@@ -18,6 +18,4 @@
 @property (strong, nonatomic) NSNumber *salary;
 @property (strong, nonatomic) NSDate *birthDate;
 
-- (void)description:(employee *)employee;
-
 @end

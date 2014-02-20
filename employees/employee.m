@@ -10,8 +10,7 @@
 
 @implementation employee
 
-
-- (void)description:(employee *)employee
+- (NSString *)description
 {
     NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
     [currencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
@@ -19,16 +18,17 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM-dd-yyyy"];
     
-
-
     NSArray *name = [[NSArray alloc] initWithObjects:employee.firstName, employee.middleName, employee.lastName, nil];
+    NSArray *string = [[NSArray alloc] initWithObjects:[@"Id: " stringByAppendingFormat: @"%d", [self.userId integerValue]],
+                       [@"Name: " stringByAppendingFormat: @"%@", [name componentsJoinedByString:@" "]],
+                       [@"Email: " stringByAppendingFormat: @"%@", self.email],
+                       [@"Birthdate: " stringByAppendingFormat: @"%@", [dateFormatter stringFromDate:self.birthDate]],
+                       [@"Annual Salary: " stringByAppendingFormat: @"%@", [currencyFormatter stringFromNumber:self.salary]],
+                       nil];
     
-    NSLog(@"Id: %d", [employee.userId integerValue]);
-    NSLog(@"Name: %@", [name componentsJoinedByString:@"|"]);
-    NSLog(@"Email: %@", employee.email);
-    NSLog(@"Birthdate: %@", [dateFormatter stringFromDate:employee.birthDate]);
-    NSLog(@"Annual Salary: %@", [currencyFormatter stringFromNumber:employee.salary]);
     
+    return [string componentsJoinedByString:@"\n"];
+
 }
 
 @end
