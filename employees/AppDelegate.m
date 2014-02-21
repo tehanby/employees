@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "employee.h"
+#import <TTAlertManager/TTAlertManager.h>
 
 @implementation AppDelegate
 
@@ -61,7 +62,20 @@
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     employee *employeeTest = [NSKeyedUnarchiver unarchiveObjectWithFile:self.filePath];
-    NSLog([employeeTest description]);
+    TTAlertManager *alertManager = [[TTAlertManager alloc] init];
+    [alertManager enqueuePrompt:[NSString stringWithFormat:@"Employee: %@",employeeTest]
+                      withTitle:@"Decoded Employee"
+                   cancelButton:@"OK"
+                    buttonTexts:@[@"Silence Does NOT Equal Consent!"]
+                  buttonHandler:^(NSUInteger selectedIndex) {
+                      
+                      // cancelButton has an index of 0 which is logically false,
+                      // buttonTexts is an array of additional buttons, the first being selectedIndex == 1, etc.
+                      if (selectedIndex) {
+                          DLog(@"User does NOT agree!");
+                      }
+                      
+                  }];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
