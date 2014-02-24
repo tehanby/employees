@@ -4,6 +4,18 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GenGitVersion.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>employees-dev.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>employees.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,12 +24,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>8E3E3ECE18BB7CCB003ABFEB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8E3E3EE718BB7CF3003ABFEB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8E3E3F0018BB7D2A003ABFEB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8E684B8218B64ACB00271D62</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>8E684BA618B64ACB00271D62</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8E95E8E618BB7A98006E80A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
