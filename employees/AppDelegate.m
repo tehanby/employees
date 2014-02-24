@@ -15,6 +15,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+#ifdef DEBUG
+    
+    NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+    
+    NSMutableString *banner = [NSMutableString new];
+    [banner appendString:@"\n\n-----------------------------------------------------------------------------\n"];
+    [banner appendFormat:@"Version %@-%@ (%@)\n",VERSION_NAME,version,build];
+    [banner appendString:@"-----------------------------------------------------------------------------\n\n"];
+    DLog(@"%@",banner);
+    
+#endif
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"MM/dd/yyyy";
     
