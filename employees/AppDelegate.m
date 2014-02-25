@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "employee.h"
 #import <TTAlertManager/TTAlertManager.h>
-#import <TestFlightSDK/TestFlight.h>
 
 @implementation AppDelegate
 
