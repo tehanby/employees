@@ -24,8 +24,8 @@
     #endif
 
     // Adapt TFLog to DLog if TESTFLIGHT is enabled. [2]
-#ifdef TESTFLIGHT
-        #import "TestFlight.h"
+    #ifdef TESTFLIGHT
+        #import <TestFlightSDK/TestFlight.h>
 
         // Log to TestFlight remotely
         #define DLog(__FORMAT__, ...) TFLog((@"%s [Line %d] " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
