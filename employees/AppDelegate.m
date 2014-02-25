@@ -9,25 +9,29 @@
 #import "AppDelegate.h"
 #import "employee.h"
 #import <TTAlertManager/TTAlertManager.h>
+#import <TestFlightSDK/TestFlight.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    #ifdef TESTFLIGHT
+        [TestFlight takeOff:TESTFLIGHT_APP_TOKEN];
+    #endif
     
-#ifdef DEBUG
+    #ifdef DEBUG
     
-    NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-    NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+        NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+        NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
     
-    NSMutableString *banner = [NSMutableString new];
-    [banner appendString:@"\n\n-----------------------------------------------------------------------------\n"];
-    [banner appendFormat:@"Version %@-%@ (%@)\n",VERSION_NAME,version,build];
-    [banner appendString:@"-----------------------------------------------------------------------------\n\n"];
-    DLog(@"%@",banner);
+        NSMutableString *banner = [NSMutableString new];
+        [banner appendString:@"\n\n-----------------------------------------------------------------------------\n"];
+        [banner appendFormat:@"Version %@-%@ (%@)\n",VERSION_NAME,version,build];
+        [banner appendString:@"-----------------------------------------------------------------------------\n\n"];
+        DLog(@"%@",banner);
     
-#endif
+    #endif
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"MM/dd/yyyy";
