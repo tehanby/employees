@@ -564,6 +564,7 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 					"ENV_DEV=1",
+					"TESTFLIGHT=1",
 				);
 				INFOPLIST_FILE = "employees-dev-Info.plist";
 				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
