@@ -1,2 +1,2 @@
-#define GIT_VERSION ad122b6
-#define GIT_TAG 0.0.2-3-gad122b6
+#define GIT_VERSION e4a7e90
+#define GIT_TAG 0.0.4-dirty
