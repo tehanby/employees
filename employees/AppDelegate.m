@@ -9,12 +9,17 @@
 #import "AppDelegate.h"
 #import "employee.h"
 #import <TTAlertManager/TTAlertManager.h>
+#import <TestFlightSDK/TestFlight.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    #ifdef TESTFLIGHT
+        [TestFlight takeOff:TESTFLIGHT_APP_TOKEN];
+    #endif
     
     #ifdef DEBUG
     
