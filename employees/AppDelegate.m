@@ -16,6 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
     #ifdef TESTFLIGHT
         [TestFlight takeOff:TESTFLIGHT_APP_TOKEN];
     #endif
